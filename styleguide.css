@@ -1,0 +1,37 @@
+:root {
+  /* Colors */
+  --primary-blue: rgba(25, 193, 182, 1);
+  --secondary-orange: rgba(254, 164, 57, 1);
+  --complimentary-pink: rgba(254, 103, 136, 1);
+  --dark-purple: #4e0148;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --background-light: #f9f9f9;
+  --white: #ffffff;
+  
+  /* Shadows */
+  --card-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+  --hover-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  
+  /* Typography */
+  --h1-size: clamp(36px, 5vw, 48px);
+  --h2-size: clamp(28px, 4vw, 36px);
+  --h3-size: clamp(22px, 3vw, 28px);
+  --body-large: clamp(18px, 2.5vw, 22px);
+  --body-regular: clamp(16px, 2vw, 18px);
+  --body-small: clamp(14px, 1.5vw, 16px);
+  
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+  
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+  --radius-round: 50%;
+}
