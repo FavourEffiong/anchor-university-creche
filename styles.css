@@ -1262,4 +1262,1110 @@ nav {
   }
 }
 
+/* Responsive styles for the entire site */
+
+/* Base responsive container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Media queries for different screen sizes */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+}
+
+/* Tablet styles */
+@media screen and (max-width: 992px) {
+  /* Header and navigation */
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .apply-button {
+    padding: 8px 20px;
+  }
+  
+  /* Hero section */
+  .hero-content {
+    max-width: 60%;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-image {
+    width: 35%;
+  }
+  
+  /* Classes section */
+  .classes-container {
+    gap: 20px;
+  }
+  
+  .class-card {
+    max-width: 280px;
+  }
+  
+  /* Mission section */
+  .mission-content {
+    gap: 30px;
+  }
+  
+  /* Services section */
+  .services-container {
+    gap: 20px;
+  }
+  
+  .service-card {
+    max-width: 280px;
+  }
+  
+  /* About section */
+  .about-content {
+    gap: 30px;
+  }
+  
+  /* News section */
+  .news-container {
+    gap: 20px;
+  }
+}
+
+
+/* Mobile menu styles */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  
+  .nav-links.show li {
+    margin: 10px 0;
+  }
+  
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+}
+
+/* Mobile landscape styles */
+@media screen and (max-width: 768px) {
+  /* Header and navigation */
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  
+  .nav-links.show li {
+    margin: 10px 0;
+  }
+  
+  .cta-button {
+    display: none;
+  }
+  
+  .menu-icon, .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  
+  /* Hero section */
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-image {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 70%;
+    height: 300px;
+    margin: 40px auto 0;
+  }
+  
+  /* Classes section */
+  .classes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .class-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  /* Mission section */
+  .mission-content {
+    flex-direction: column;
+  }
+  
+  .mission-image, .mission-text {
+    width: 100%;
+  }
+  
+  .stats-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 15px;
+  }
+  
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Services section */
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .service-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  /* About section */
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-text, .about-image {
+    width: 100%;
+  }
+  
+  .about-image {
+    margin-top: 30px;
+  }
+  
+  /* News section */
+  .news-container {
+    flex-direction: column;
+  }
+  
+  .news-card {
+    width: 100%;
+  }
+  
+  /* Footer */
+  .quick-links {
+    flex-direction: column;
+  }
+  
+  .quick-links div {
+    margin-bottom: 30px;
+    padding: 0;
+  }
+  
+  .contact-info {
+    text-align: left;
+  }
+  
+  .newsletter input[type="email"] {
+    width: 100%;
+    margin: 0 0 10px 0;
+    box-sizing: border-box;
+  }
+  
+  .newsletter button {
+    width: 100%;
+  }
+}
+
+/* Mobile portrait styles */
+@media screen and (max-width: 576px) {
+  /* Header */
+  .logo img {
+    height: 40px;
+  }
+  
+  /* Hero section */
+  .hero {
+    padding: 60px 0;
+    min-height: auto;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .admission-text {
+    font-size: 1rem;
+  }
+  
+  .hero-image {
+    height: 250px;
+    width: 90%;
+  }
+  
+  /* Vision section */
+  .vision-section {
+    padding: 40px 0;
+  }
+  
+  .vision-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .vision-section p {
+    font-size: 1rem;
+  }
+  
+  /* Classes section */
+  .classes-section {
+    padding: 40px 0;
+  }
+  
+  .classes-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Mission section */
+  .mission-section {
+    padding: 40px 0;
+  }
+  
+  .mission-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* Services section */
+  .services-section {
+    padding: 40px 0;
+  }
+  
+  .services-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .service-image {
+    height: 180px;
+  }
+  
+  /* About section */
+  .about-section {
+    padding: 40px 0;
+  }
+  
+  .about-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* Join section */
+  .join-section {
+    padding: 40px 0;
+  }
+  
+  .join-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* News section */
+  .news-section {
+    padding: 40px 0;
+  }
+  
+  .news-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .news-image {
+    height: 180px;
+  }
+  
+  /* Newsletter section */
+  .newsletter-section {
+    padding: 40px 0;
+  }
+  
+  .newsletter-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 40px 10px;
+  }
+  
+  .newsletter h2 {
+    font-size: 20px;
+  }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 375px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .apply-now-button {
+    padding: 10px 20px;
+  }
+  
+  .hero-image {
+    height: 200px;
+  }
+  
+  .section-heading {
+    font-size: 1.6rem;
+  }
+}
+
+/* Animation and transition styles */
+.class-card, .service-card, .news-card, .mission-image, .about-image {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.class-card.visible, .service-card.visible, .news-card.visible, 
+.mission-image.visible, .about-image.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation for cards */
+.class-card:nth-child(1), .service-card:nth-child(1), .news-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.class-card:nth-child(2), .service-card:nth-child(2), .news-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.class-card:nth-child(3), .service-card:nth-child(3), .news-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Hamburger menu animation */
+.hamburger span {
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, .class-card, .service-card, .news-card {
+  transition: all 0.3s ease;
+}
+
+/* Improved hover effects */
+.apply-button:hover, .apply-now-button:hover, .view-more-button:hover, 
+.subscribe-button:hover, .newsletter button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer responsive styles */
+@media screen and (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  
+  .newsletter {
+    width: 100%;
+  }
+  
+  .quick-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .quick-links div {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .newsletter input[type="email"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .newsletter button {
+    width: 100%;
+  }
+}
+
+/* Desktop-first approach - Start with desktop styles */
+
+/* Base styles for desktop */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Enhanced desktop styles */
+@media screen and (min-width: 992px) {
+  /* Header and navigation */
+  header {
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links a {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .apply-button {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+  
+  /* Hero section */
+  .hero {
+    min-height: 600px;
+    padding: 100px 0;
+  }
+  
+  .hero-content {
+    max-width: 50%;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+  }
+  
+  .admission-text {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+  }
+  
+  .apply-now-button {
+    padding: 15px 40px;
+    font-size: 18px;
+  }
+  
+  .hero-image {
+    width: 45%;
+    height: 90%;
+    right: 5%;
+  }
+  
+  /* Classes section */
+  .classes-section {
+    padding: 100px 0;
+  }
+  
+  .classes-section h2 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+  }
+  
+  .classes-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .class-card {
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .class-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  }
+  
+  .class-card h3 {
+    font-size: 1.8rem;
+  }
+  
+  /* Mission section */
+  .mission-section {
+    padding: 100px 0;
+  }
+  
+  .mission-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .mission-image {
+    width: 45%;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  
+  .mission-text {
+    width: 55%;
+  }
+  
+  .mission-text h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  
+  .stats-container {
+    display: flex;
+    margin: 40px 0;
+  }
+  
+  /* Services section */
+  .services-section {
+    padding: 100px 0;
+  }
+  
+  .services-section h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  
+  .services-intro {
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .service-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+  
+  /* About section */
+  .about-section {
+    padding: 100px 0;
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .about-text {
+    width: 55%;
+  }
+  
+  .about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  
+  .about-image {
+    width: 45%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* News section */
+  .news-section {
+    padding: 100px 0;
+  }
+  
+  .news-section h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  
+  .news-intro {
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+  }
+  
+  .news-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .news-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  }
+  
+  /* Newsletter section */
+  .newsletter-section {
+    padding: 80px 0;
+  }
+  
+  .newsletter-section h2 {
+    font-size: 2.5rem;
+  }
+  
+  .newsletter-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .newsletter-form {
+    max-width: 600px;
+  }
+  
+  .email-input {
+    padding: 15px 25px;
+    font-size: 16px;
+  }
+  
+  .subscribe-button {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 80px 0 40px;
+  }
+  
+  .newsletter {
+    margin-bottom: 60px;
+  }
+  
+  .newsletter h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .newsletter p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .newsletter input[type="email"] {
+    padding: 15px 25px;
+    font-size: 16px;
+    width: 350px;
+  }
+  
+  .newsletter button {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+  
+  .quick-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  .quick-links div h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .quick-links div ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .contact-info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+}
+
+/* Fix for the footer newsletter on desktop */
+@media screen and (min-width: 992px) {
+  .footer .newsletter input[type="email"] {
+    width: 350px;
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+  
+  .footer .newsletter button {
+    width: auto;
+  }
+  
+  .quick-links {
+    flex-direction: row;
+  }
+  
+  .quick-links div {
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+/* Animation and transition styles */
+.class-card, .service-card, .news-card, .mission-image, .about-image {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.class-card.visible, .service-card.visible, .news-card.visible, 
+.mission-image.visible, .about-image.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation for cards */
+.class-card:nth-child(1), .service-card:nth-child(1), .news-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.class-card:nth-child(2), .service-card:nth-child(2), .news-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.class-card:nth-child(3), .service-card:nth-child(3), .news-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Hamburger menu animation */
+.hamburger span {
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, .class-card, .service-card, .news-card {
+  transition: all 0.3s ease;
+}
+
+/* Improved hover effects */
+.apply-button:hover, .apply-now-button:hover, .view-more-button:hover, 
+.subscribe-button:hover, .newsletter button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer responsive styles */
+@media screen and (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  
+  .newsletter {
+    width: 100%;
+  }
+  
+  .quick-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .quick-links div {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .newsletter input[type="email"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .newsletter button {
+    width: 100%;
+  }
+}
+
+/* Footer styles - desktop first */
+.footer {
+  background: linear-gradient(to bottom, #4c67ff, #7733ff);
+  color: white;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter {
+  text-align: center;
+  margin-bottom: 60px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.newsletter h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.newsletter p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.newsletter input[type="email"] {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 30px;
+  width: 350px;
+  margin-right: 15px;
+  font-size: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.newsletter button {
+  padding: 15px 30px;
+  background-color: #4c067e;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.newsletter button:hover {
+  background-color: #320456;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.quick-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.quick-links div {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.quick-links div h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.quick-links div ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links div ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.quick-links div ul li a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.quick-links div ul li a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.contact-info {
+  text-align: right;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Footer responsive styles */
+@media screen and (max-width: 992px) {
+  .newsletter input[type="email"] {
+    width: 300px;
+  }
+  
+  .quick-links {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .newsletter {
+    margin-bottom: 40px;
+  }
+  
+  .newsletter h2 {
+    font-size: 24px;
+  }
+  
+  .newsletter p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .newsletter input[type="email"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .newsletter button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .quick-links {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .quick-links div {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .quick-links div:last-child {
+    margin-bottom: 0;
+  }
+  
+  .quick-links div h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .quick-links div ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+  
+  .contact-info p {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+}
+
 
