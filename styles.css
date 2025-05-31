@@ -2368,4 +2368,179 @@ a, button, .class-card, .service-card, .news-card {
   }
 }
 
+/* About Hero Section */
+.about-hero {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: var(--light-color);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Leadership Section */
+.leadership-section {
+  padding: 80px 0;
+  background-color: var(--light-color);
+}
+
+.leader-profile {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: flex-start;
+}
+
+.leader-image {
+  flex: 0 0 250px;
+}
+
+.leader-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.leader-info {
+  flex: 1;
+}
+
+.leader-info h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-purple);
+  margin-bottom: 5px;
+}
+
+.leader-title {
+  font-size: 1.1rem;
+  color: var(--secondary-blue);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.leader-quote {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* History & Values Section */
+.history-values-section {
+  padding: 80px 0;
+  background-color: var(--background-color);
+}
+
+.history-mission-vision {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.history-box, .vision-box, .mission-box {
+  flex: 1;
+  background-color: var(--light-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.history-box h2, .vision-box h2, .mission-box h2, .core-values h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-purple);
+  margin-bottom: 20px;
+}
+
+.core-values {
+  background-color: var(--light-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.values-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.values-list li {
+  flex: 0 0 calc(33.333% - 20px);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.value-bullet {
+  color: var(--secondary-blue);
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+/* Responsive styles for About page */
+@media screen and (max-width: 992px) {
+  .leader-profile {
+    gap: 30px;
+  }
+  
+  .leader-image {
+    flex: 0 0 200px;
+  }
+  
+  .values-list li {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .leader-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .leader-image {
+    margin-bottom: 20px;
+  }
+  
+  .history-mission-vision {
+    flex-direction: column;
+  }
+  
+  .values-list li {
+    flex: 0 0 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about-hero {
+    padding: 40px 0;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .leadership-section, .history-values-section {
+    padding: 40px 0;
+  }
+  
+  .leader-info h2 {
+    font-size: 1.6rem;
+  }
+  
+  .history-box h2, .vision-box h2, .mission-box h2, .core-values h2 {
+    font-size: 1.5rem;
+  }
+}
 
