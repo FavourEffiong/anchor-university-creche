@@ -21,13 +21,14 @@
           <img src="images/anchor-university-logo.png" alt="Anchor University Logo">
         </div>
         <ul class="nav-links">
-          <li><a href="#" class="active">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
         <div class="cta-button">
-          <a href="#" class="apply-button">Apply now></a>
+          <a href="#" class="apply-button">Apply now</a>
         </div>
         <div class="menu-icon">
           <img src="images/menu-icon.png" alt="Menu">
@@ -329,28 +330,37 @@
     </div>
   </section>
 
-
-
-  <footer class="footer">
-    <div class="newsletter">
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="container">
       <h2>Join Our Newsletter</h2>
       <p>Subscribe to our newsletter to get updated on our latest and new activities</p>
-      <input type="email" placeholder="Your Email">
-      <button>Subscribe now</button>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your Email">
+        <button type="submit" class="subscribe-button">Subscribe now</button>
+      </form>
     </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
     <div class="quick-links">
-      <div>
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="AUL Creche Logo">
         <p>It is our goal to provide age-appropriate opportunities for every child enrolled in AUL Creche enrichment classes.</p>
       </div>
+
       <div>
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="#">Blog</a></li>
         </ul>
       </div>
+
       <div>
         <h3>Quick Links</h3>
         <ul>
@@ -361,14 +371,17 @@
           <li><a href="#">School Stuff</a></li>
         </ul>
       </div>
+
       <div class="contact-info">
-        <p>Ayobo Ipaja Lagos</p>
-        <p>000-000-0000</p>
-        <p>aulcrechesupport@email.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Ayobo Ipaja Lagos</p>
+        <p><i class="fas fa-phone"></i> 000-000-0000</p>
+        <p><i class="fas fa-envelope"></i> aulcrechesupport@email.com</p>
       </div>
     </div>
   </footer>
 
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="script.js"></script>
 </body>
 
