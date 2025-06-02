@@ -245,3 +245,55 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Mobile Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+const navLinksItems = document.querySelectorAll('.nav-links li');
+
+hamburger.addEventListener('click', () => {
+  // Toggle navigation
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+  
+  // Animate links
+  navLinksItems.forEach((link, index) => {
+    if (link.style.animation) {
+      link.style.animation = '';
+    } else {
+      link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+    }
+  });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
+  }
+});
+
+// Close mobile menu when clicking a link
+navLinksItems.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
+  });
+});
+
+// Add animation keyframes to the stylesheet
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+`;
+document.head.appendChild(style);
+
