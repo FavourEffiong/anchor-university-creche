@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Anchor University Creche</title>
+    <title>Contact Us - Anchor University</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -46,90 +46,88 @@
     <section class="contact-section">
         <div class="container">
             <h1>Contact Us</h1>
-            <p class="section-intro">Any question or remarks? Just write us a message!</p>
+            <p class="contact-intro">Any question or remarks? Just write us a message!</p>
 
-            <div class="contact-container">
-                <!-- Contact Information -->
-                <div class="contact-info-card">
+            <div class="contact-wrapper">
+                <div class="contact-info">
                     <h2>Contact Information</h2>
-                    <p>Say something to start a live chat!</p>
+                    <p class="info-subtitle">Say something to start a live chat!</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
-                            <i class="icon-phone"></i>
-                            <p>+1 012 3456 789</p>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 012 3456 789</span>
                         </div>
                         <div class="contact-item">
-                            <i class="icon-email"></i>
-                            <p>demo@gmail.com</p>
+                            <i class="fas fa-envelope"></i>
+                            <span>demo@gmail.com</span>
                         </div>
                         <div class="contact-item">
-                            <i class="icon-location"></i>
-                            <p>132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>132 Dartmouth Street Boston, Massachusetts 02156 United States</span>
                         </div>
                     </div>
 
                     <div class="social-links">
-                        <a href="#" class="social-icon twitter"></a>
-                        <a href="#" class="social-icon instagram"></a>
-                        <a href="#" class="social-icon discord"></a>
+                        <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link discord"><i class="fab fa-discord"></i></a>
                     </div>
+
+                    <div class="contact-decoration"></div>
                 </div>
 
-                <!-- Contact Form -->
                 <div class="contact-form">
-                    <form id="contactForm" novalidate>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name</label>
-                                <input type="text" id="firstName" placeholder="First Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" id="lastName" placeholder="Doe" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" placeholder="Email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" placeholder="+1 012 3456 789" required>
-                            </div>
-                        </div>
-
+                    <div class="form-row">
                         <div class="form-group">
-                            <label>Select Subject?</label>
-                            <div class="radio-group">
-                                <label class="radio-option">
-                                    <input type="radio" name="subject" value="general" required>
-                                    <span>General Inquiry</span>
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="subject" value="general2">
-                                    <span>General Inquiry</span>
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="subject" value="general3">
-                                    <span>General Inquiry</span>
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="subject" value="general4">
-                                    <span>General Inquiry</span>
-                                </label>
-                            </div>
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName">
                         </div>
-
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" placeholder="Write your message.." required></textarea>
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Doe">
                         </div>
+                    </div>
 
-                        <button type="submit" class="send-message-btn">Send Message</button>
-                    </form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 012 3456 789">
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Select Subject?</label>
+                        <div class="subject-options">
+                            <label class="subject-option">
+                                <input type="radio" name="subject" value="general1" checked>
+                                <span class="radio-label">General inquiry</span>
+                            </label>
+                            <label class="subject-option">
+                                <input type="radio" name="subject" value="general2">
+                                <span class="radio-label">General inquiry</span>
+                            </label>
+                            <label class="subject-option">
+                                <input type="radio" name="subject" value="general3">
+                                <span class="radio-label">General inquiry</span>
+                            </label>
+                            <label class="subject-option">
+                                <input type="radio" name="subject" value="general4">
+                                <span class="radio-label">General inquiry</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message.."></textarea>
+                    </div>
+
+                    <button type="submit" class="send-message-btn">Send Message</button>
                 </div>
             </div>
         </div>
@@ -138,61 +136,42 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-top">
-                <div class="footer-logo">
-                    <img src="images/logo.png" alt="AUL Creche Logo">
-                    <p>It is our goal to provide age-appropriate opportunities for every child enrolled in AUL Creche enrichment classes.</p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>It is our goal to provide age-appropriate opportunities for every child enrolled in AUL enrichment classes.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="quick-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
                     </div>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Programs</h3>
-                    <ul>
-                        <li><a href="#">Recently Viewed</a></li>
-                        <li><a href="#">New Programs</a></li>
-                        <li><a href="#">Curriculums</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">School Stuff</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contact">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Ayobo Ipaja Lagos</p>
-                    <p><i class="fas fa-phone"></i> 000-000-0000</p>
-                    <p><i class="fas fa-envelope"></i> aulcrechesupport@email.com</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="newsletter">
-                    <h3>Join Our Newsletter</h3>
-                    <p>Subscribe to our newsletter to get updated on our latest and new activities</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit" class="subscribe-button">Subscribe now</button>
-                    </form>
+                    <div class="quick-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Recently Viewed</a></li>
+                            <li><a href="#">New programs</a></li>
+                            <li><a href="#">Curriculums</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">School stuff</a></li>
+                        </ul>
+                    </div>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Ayobo Ipaja Lagos</p>
+                        <p><i class="fas fa-phone"></i> 000-000-0000</p>
+                        <p><i class="fas fa-envelope"></i> aulcrechesupport@email.com</p>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="script.js"></script>
 </body>
 </html> 
