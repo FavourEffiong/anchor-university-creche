@@ -3,6 +3,57 @@ document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
   const body = document.body;
+  const ctaButton = document.querySelector('.cta-button');
+  
+  function toggleMenu() {
+    navLinks.classList.toggle('show');
+    hamburger.classList.toggle('active');
+    body.classList.toggle('menu-open');
+    
+    if (navLinks.classList.contains('show')) {
+      // Move CTA button into the mobile menu when it's open
+      if (window.innerWidth <= 768 && ctaButton) {
+        navLinks.appendChild(ctaButton);
+      }
+      
+      // Add mobile menu styles
+      navLinks.style.display = 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'fixed';
+      navLinks.style.top = document.querySelector('header').offsetHeight + 'px';
+      navLinks.style.left = '0';
+      navLinks.style.width = '100%';
+      navLinks.style.height = 'calc(100vh - ' + document.querySelector('header').offsetHeight + 'px)';
+      navLinks.style.backgroundColor = 'white';
+      navLinks.style.padding = '20px';
+      navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+      navLinks.style.zIndex = '99';
+      
+      // Animate menu items
+      const menuItems = navLinks.querySelectorAll('li, .cta-button');
+      menuItems.forEach((item, index) => {
+        item.style.animation = `slideIn 0.3s ease forwards ${index * 0.1}s`;
+        item.style.opacity = '0';
+      });
+    } else {
+      // Move CTA button back to the header when menu is closed
+      if (window.innerWidth <= 768 && ctaButton) {
+        document.querySelector('nav').appendChild(ctaButton);
+      }
+      
+      // Reset styles after animation
+      const menuItems = navLinks.querySelectorAll('li, .cta-button');
+      menuItems.forEach(item => {
+        item.style.animation = '';
+      });
+      
+      setTimeout(() => {
+        if (!navLinks.classList.contains('show')) {
+          navLinks.style = '';
+        }
+      }, 300);
+    }
+  }
   
   hamburger.addEventListener('click', toggleMenu);
   
@@ -11,20 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const isClickInsideMenu = navLinks.contains(event.target);
     const isClickOnHamburger = hamburger.contains(event.target);
     
-    if (navLinks.classList.contains('show') && 
-        !isClickInsideMenu && 
-        !isClickOnHamburger) {
+    if (navLinks.classList.contains('show') && !isClickInsideMenu && !isClickOnHamburger) {
       toggleMenu();
-    }
-  });
-  
-  // Close menu when window is resized to desktop size
-  window.addEventListener('resize', function() {
-    if (window.innerWidth > 768 && navLinks.classList.contains('show')) {
-      navLinks.classList.remove('show');
-      hamburger.classList.remove('active');
-      resetMenuStyles();
-      body.style.overflow = '';
     }
   });
   
@@ -38,46 +77,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  function toggleMenu() {
-    navLinks.classList.toggle('show');
-    hamburger.classList.toggle('active');
-    
-    // If menu is shown, add these styles and prevent body scrolling
-    if (navLinks.classList.contains('show')) {
-      navLinks.style.display = 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '100%';
-      navLinks.style.left = '0';
-      navLinks.style.width = '100%';
-      navLinks.style.backgroundColor = 'white';
-      navLinks.style.padding = '20px';
-      navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
-      navLinks.style.zIndex = '1000';
-      body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-    } else {
-      // Reset styles when menu is hidden
-      resetMenuStyles();
-      body.style.overflow = ''; // Re-enable scrolling
-    }
-  }
-  
-  function resetMenuStyles() {
-    setTimeout(() => {
-      if (!navLinks.classList.contains('show')) {
-        navLinks.style.display = '';
-        navLinks.style.flexDirection = '';
-        navLinks.style.position = '';
-        navLinks.style.top = '';
-        navLinks.style.left = '';
-        navLinks.style.width = '';
-        navLinks.style.backgroundColor = '';
-        navLinks.style.padding = '';
-        navLinks.style.boxShadow = '';
-        navLinks.style.zIndex = '';
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      if (navLinks.classList.contains('show')) {
+        toggleMenu();
       }
-    }, 300);
-  }
+      // Ensure CTA button is in the correct position
+      if (ctaButton) {
+        document.querySelector('nav').appendChild(ctaButton);
+      }
+      navLinks.style = '';
+    }
+  });
 });
 
 // Add smooth scrolling for anchor links

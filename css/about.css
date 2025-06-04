@@ -1,0 +1,599 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+    background-color: #4B0082;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: white;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #4B0082;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.apply-btn {
+    background-color: #4169E1;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.apply-btn:hover {
+    background-color: #3154b3;
+}
+
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1000;
+}
+
+.menu-btn span {
+    width: 25px;
+    height: 2px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+/* Menu button animation */
+.menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Page Title Section */
+.page-title {
+    background-color: #4B0082;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.page-title h1 {
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* Chancellor Section */
+.chancellor-section {
+    padding: 80px 5%;
+    background: #fff;
+}
+
+.chancellor-content {
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.chancellor-image {
+    flex: 0 0 400px;
+}
+
+.chancellor-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.chancellor-info {
+    flex: 1;
+}
+
+.chancellor-info h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.chancellor-info .title {
+    color: #666;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.chancellor-info .description {
+    color: #333;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Info Section */
+.info-section {
+    padding: 80px 5%;
+    background: #f8f9fa;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-left > div,
+.info-right > div {
+    margin-bottom: 40px;
+}
+
+.info-left h2,
+.info-right h2 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.info-left p {
+    color: #333;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.core-values ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.core-values li {
+    font-size: 1.1rem;
+    color: #333;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.core-values li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .chancellor-content {
+        gap: 40px;
+    }
+
+    .chancellor-image {
+        flex: 0 0 350px;
+    }
+
+    .info-grid {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        padding: 60px 5%;
+    }
+
+    .page-title h1 {
+        font-size: 3rem;
+    }
+
+    .chancellor-section {
+        padding: 60px 5%;
+    }
+
+    .chancellor-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chancellor-image {
+        flex: none;
+        max-width: 300px;
+        margin: 0 auto 40px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .chancellor-info h2 {
+        font-size: 2rem;
+    }
+
+    .chancellor-info .title {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-btn {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .chancellor-info .description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .info-left h2,
+    .info-right h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Footer */
+.footer {
+    padding: 80px 5% 40px;
+    background: linear-gradient(135deg, #4169E1 0%, #4B0082 100%);
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info {
+    flex: 1;
+    max-width: 300px;
+}
+
+.footer-info p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.footer-links {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.quick-links h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.quick-links ul,
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links li {
+    margin-bottom: 12px;
+}
+
+.quick-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.quick-links a:hover {
+    opacity: 1;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-info {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quick-links {
+        margin-bottom: 30px;
+    }
+
+    .contact-info li {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    // ... existing responsive code ...
+}
+
+/* What We Offer Section */
+.what-we-offer {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.what-we-offer h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+}
+
+.offers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.offer-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.offer-card.purple {
+    background: #4A154B;
+    color: white;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+}
+
+.offer-icon {
+    width: 80px;
+    height: 80px;
+    background: #f5f0f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.purple .offer-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.offer-icon i {
+    font-size: 32px;
+    color: #4A154B;
+}
+
+.purple .offer-icon i {
+    color: white;
+}
+
+.offer-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+}
+
+.offer-card p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.purple p {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .what-we-offer h2 {
+        font-size: 2rem;
+    }
+    
+    .offers-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Menu Styles - Slider */
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1000;
+}
+
+.menu-btn span {
+    width: 25px;
+    height: 2px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+/* Menu button animation */
+.menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.5s ease-in-out;
+        z-index: 100;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+    }
+    
+    .nav-links.active {
+        transform: translateX(0);
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.4s ease;
+    }
+    
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0.2s;
+    }
+    
+    .nav-links.active li:nth-child(2) {
+        transition-delay: 0.3s;
+    }
+    
+    .nav-links.active li:nth-child(3) {
+        transition-delay: 0.4s;
+    }
+    
+    .nav-links.active li:nth-child(4) {
+        transition-delay: 0.5s;
+    }
+    
+    .nav-right .apply-btn {
+        margin-right: 15px;
+    }
+    
+    body.menu-open {
+        overflow: hidden;
+    }
+    
+    /* Add overlay when menu is open */
+    body.menu-open::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 90;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+}

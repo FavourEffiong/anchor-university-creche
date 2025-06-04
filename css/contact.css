@@ -1,0 +1,368 @@
+.page-title {
+    background-color: #4B0082;
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 120px 5%;
+    color: white;
+    position: relative;
+}
+
+.page-title p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.page-title h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Contact Form Section - Reworked to match website theme */
+.contact-section {
+    padding: 50px 0 80px;
+    background-color: #f9f9f9;
+}
+
+.contact-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Left panel with contact info */
+.contact-info-panel {
+    background: linear-gradient(135deg, #4B0082 0%, #4169E1 100%);
+    color: white;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info-panel::before {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.contact-info-panel h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.contact-info-panel p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.contact-details {
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.contact-item i {
+    font-size: 20px;
+    margin-right: 20px;
+    color: #40E0D0;
+    width: 24px;
+}
+
+.contact-item span {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.social-links {
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 15px;
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #fff;
+    color: #4B0082;
+    transform: translateY(-3px);
+}
+
+/* Right panel with form */
+.contact-form-panel {
+    padding: 60px;
+    background: #fff;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4B0082;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+    margin-top: 20px;
+}
+
+/* Subject options styling */
+.subject-options {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.subject-option {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+    cursor: pointer;
+}
+
+.subject-option input[type="checkbox"] {
+    display: none;
+}
+
+.subject-option label {
+    display: block;
+    padding: 15px 20px 15px 45px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.subject-option label:before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.subject-option label:after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    border-width: 0 2px 2px 0;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.subject-option input[type="checkbox"]:checked + label {
+    border-color: #4B0082;
+}
+
+.subject-option input[type="checkbox"]:checked + label:before {
+    background: #4B0082;
+    border-color: #4B0082;
+}
+
+.subject-option input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    transform: translateY(-75%) rotate(45deg);
+}
+
+.subject-option label:hover {
+    border-color: #4B0082;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subject-option label:hover:before {
+    border-color: #4B0082;
+}
+
+/* Form status messages */
+#formStatus {
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.success-message {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+    border-left: 4px solid #4CAF50;
+}
+
+.error-message {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+    border-left: 4px solid #F44336;
+}
+
+/* Send message button */
+.send-message-btn {
+    background: linear-gradient(135deg, #4B0082 0%, #4169E1 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+    float: right;
+    margin-top: 20px;
+}
+
+.send-message-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(75, 0, 130, 0.3);
+}
+
+.send-message-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info-panel {
+        padding: 40px;
+    }
+    
+    .contact-form-panel {
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-section {
+        padding: 60px 5%;
+    }
+    
+    .contact-info-panel,
+    .contact-form-panel {
+        padding: 30px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .send-message-btn {
+        width: 100%;
+        float: none;
+    }
+    
+    .subject-options {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .contact-info-panel,
+    .contact-form-panel {
+        padding: 20px;
+    }
+}
+
+/* Fix for menu overlay */
+body.menu-open {
+    overflow: hidden;
+} 

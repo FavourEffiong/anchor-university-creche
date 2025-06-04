@@ -3,133 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Anchor University</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact Us - Anchor University Creche</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        <p>🔔 Applications open 20-24 May!!! 🔔</p>
+        <p>🔔 Applications are open!! 🔔</p>
     </div>
 
-    <!-- Header Section -->
+    <!-- Header/Navigation -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <img src="images/anchor-university-logo.png" alt="Anchor University Logo">
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html" class="active">Contact Us</a></li>
-                </ul>
-                <div class="cta-button">
-                    <a href="#" class="apply-button">Apply now</a>
-                </div>
-                <div class="menu-icon">
-                    <img src="images/menu-icon.png" alt="Menu">
-                </div>
-                <div class="hamburger">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Anchor University Logo">
+                <span class="logo-text">AUL Creche</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+                <li class="mobile-apply"><a href="#" class="apply-btn">Apply now</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="#" class="apply-btn desktop-apply">Apply now</a>
+                <button class="menu-btn" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
-            </nav>
-        </div>
+                </button>
+            </div>
+        </nav>
     </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <h1>Contact Us</h1>
+        <br>
+        <p>Any question or remarks? Just write us a message!</p>
+    </section>
 
     <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
-            <h1>Contact Us</h1>
-            <p class="contact-intro">Any question or remarks? Just write us a message!</p>
+            <div class="contact-intro">
+                <!-- <h2>Get in Touch</h2>
+                <p>We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p> -->
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-grid">
+                    <div class="contact-info-panel">
+                        <h2>Contact Information</h2>
+                        <p>Have questions about our programs? We're here to help!</p>
 
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h2>Contact Information</h2>
-                    <p class="info-subtitle">Say something to start a live chat!</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+2348039090931</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>aulcrechesupport@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Ayobo Ipaja Lagos</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
                     
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+1 012 3456 789</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>demo@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>132 Dartmouth Street Boston, Massachusetts 02156 United States</span>
-                        </div>
+                    <div class="contact-form-panel">
+                        <form id="contactForm" action="https://formspree.io/f/xpzvgkrw" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>What would you like to discuss?</label>
+                                <div class="subject-options">
+                                    <div class="subject-option">
+                                        <input type="checkbox" id="enrollment" name="subject" value="Enrollment">
+                                        <label for="enrollment">Enrollment</label>
+                                    </div>
+                                    <div class="subject-option">
+                                        <input type="checkbox" id="programs" name="subject" value="Programs">
+                                        <label for="programs">Programs</label>
+                                    </div>
+                                    <div class="subject-option">
+                                        <input type="checkbox" id="fees" name="subject" value="Fees & Payments">
+                                        <label for="fees">Fees & Payments</label>
+                                    </div>
+                                    <div class="subject-option">
+                                        <input type="checkbox" id="other" name="subject" value="Other">
+                                        <label for="other">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            
+                            <!-- Hidden field to specify the email recipient -->
+                            <input type="hidden" name="_replyto" value="favoureffiong2008@gmail.com">
+                            
+                            <!-- Redirect after submission -->
+                            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                            
+                            <div id="formStatus"></div>
+                            
+                            <button type="submit" class="send-message-btn">Send Message</button>
+                        </form>
                     </div>
-
-                    <div class="social-links">
-                        <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link discord"><i class="fab fa-discord"></i></a>
-                    </div>
-
-                    <div class="contact-decoration"></div>
-                </div>
-
-                <div class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName">
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Doe">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 012 3456 789">
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label>Select Subject?</label>
-                        <div class="subject-options">
-                            <label class="subject-option">
-                                <input type="radio" name="subject" value="general1" checked>
-                                <span class="radio-label">General inquiry</span>
-                            </label>
-                            <label class="subject-option">
-                                <input type="radio" name="subject" value="general2">
-                                <span class="radio-label">General inquiry</span>
-                            </label>
-                            <label class="subject-option">
-                                <input type="radio" name="subject" value="general3">
-                                <span class="radio-label">General inquiry</span>
-                            </label>
-                            <label class="subject-option">
-                                <input type="radio" name="subject" value="general4">
-                                <span class="radio-label">General inquiry</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Write your message.."></textarea>
-                    </div>
-
-                    <button type="submit" class="send-message-btn">Send Message</button>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h2>Join Our Newsletter</h2>
+            <p>Subscribe to our newsletter to get updated on our latest and new activities</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit" class="subscribe-button">Subscribe now</button>
+            </form>
         </div>
     </section>
 
@@ -138,40 +170,63 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <p>It is our goal to provide age-appropriate opportunities for every child enrolled in AUL enrichment classes.</p>
+                    <h1>Anchor University Creche</h1>
+                    <p>It is our goal to provide age appropriate opportunity for every child enrolled in AUL Creche enrichment classes.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
+
                 <div class="footer-links">
                     <div class="quick-links">
                         <h3>Quick Links</h3>
                         <ul>
+                            <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="services.html">Services</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                            <li><a href="#">Blog</a></li>
                         </ul>
                     </div>
-                    <div class="quick-links">
-                        <h3>Quick Links</h3>
+
+                    <!-- <div class="quick-links">
+                        <h3>Programs</h3>
                         <ul>
-                            <li><a href="#">Recently Viewed</a></li>
-                            <li><a href="#">New programs</a></li>
-                            <li><a href="#">Curriculums</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">School stuff</a></li>
+                            <li><a href="#">Curriculum</a></li>
+                            <li><a href="#">Activities</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Gallery</a></li>
                         </ul>
-                    </div>
+                    </div> -->
+
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Ayobo Ipaja Lagos</p>
-                        <p><i class="fas fa-phone"></i> 000-000-0000</p>
-                        <p><i class="fas fa-envelope"></i> aulcrechesupport@email.com</p>
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Ayobo Ipaja Lagos
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                000-000-0000
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                aulcrechesupport@email.com
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Anchor University Creche. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Add Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="script.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html> 
