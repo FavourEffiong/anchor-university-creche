@@ -1,93 +1,47 @@
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.querySelector('.hamburger');
+  const menuBtn = document.querySelector('.menu-btn');
   const navLinks = document.querySelector('.nav-links');
   const body = document.body;
-  const ctaButton = document.querySelector('.cta-button');
   
   function toggleMenu() {
-    navLinks.classList.toggle('show');
-    hamburger.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+    navLinks.classList.toggle('active');
     body.classList.toggle('menu-open');
-    
-    if (navLinks.classList.contains('show')) {
-      // Move CTA button into the mobile menu when it's open
-      if (window.innerWidth <= 768 && ctaButton) {
-        navLinks.appendChild(ctaButton);
-      }
-      
-      // Add mobile menu styles
-      navLinks.style.display = 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'fixed';
-      navLinks.style.top = document.querySelector('header').offsetHeight + 'px';
-      navLinks.style.left = '0';
-      navLinks.style.width = '100%';
-      navLinks.style.height = 'calc(100vh - ' + document.querySelector('header').offsetHeight + 'px)';
-      navLinks.style.backgroundColor = 'white';
-      navLinks.style.padding = '20px';
-      navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
-      navLinks.style.zIndex = '99';
-      
-      // Animate menu items
-      const menuItems = navLinks.querySelectorAll('li, .cta-button');
-      menuItems.forEach((item, index) => {
-        item.style.animation = `slideIn 0.3s ease forwards ${index * 0.1}s`;
-        item.style.opacity = '0';
-      });
-    } else {
-      // Move CTA button back to the header when menu is closed
-      if (window.innerWidth <= 768 && ctaButton) {
-        document.querySelector('nav').appendChild(ctaButton);
-      }
-      
-      // Reset styles after animation
-      const menuItems = navLinks.querySelectorAll('li, .cta-button');
-      menuItems.forEach(item => {
-        item.style.animation = '';
-      });
-      
-      setTimeout(() => {
-        if (!navLinks.classList.contains('show')) {
-          navLinks.style = '';
-        }
-      }, 300);
-    }
   }
   
-  hamburger.addEventListener('click', toggleMenu);
+  if (menuBtn) {
+    menuBtn.addEventListener('click', toggleMenu);
+  }
   
   // Close menu when clicking outside
   document.addEventListener('click', function(event) {
-    const isClickInsideMenu = navLinks.contains(event.target);
-    const isClickOnHamburger = hamburger.contains(event.target);
+    const isClickInsideMenu = navLinks && navLinks.contains(event.target);
+    const isClickOnMenuBtn = menuBtn && menuBtn.contains(event.target);
     
-    if (navLinks.classList.contains('show') && !isClickInsideMenu && !isClickOnHamburger) {
+    if (navLinks && navLinks.classList.contains('active') && !isClickInsideMenu && !isClickOnMenuBtn) {
       toggleMenu();
     }
   });
   
   // Close menu when clicking on a link
-  const menuLinks = navLinks.querySelectorAll('a');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      if (navLinks.classList.contains('show')) {
-        toggleMenu();
-      }
+  if (navLinks) {
+    const menuLinks = navLinks.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (navLinks.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
     });
-  });
+  }
   
   // Handle window resize
   window.addEventListener('resize', function() {
     if (window.innerWidth > 768) {
-      if (navLinks.classList.contains('show')) {
+      if (navLinks && navLinks.classList.contains('active')) {
         toggleMenu();
       }
-      // Ensure CTA button is in the correct position
-      if (ctaButton) {
-        document.querySelector('nav').appendChild(ctaButton);
-      }
-      navLinks.style = '';
     }
   });
 });
@@ -250,89 +204,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-    });
-});
-
-// Mobile Menu Toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const navLinksItems = document.querySelectorAll('.nav-links a');
-
-hamburger.addEventListener('click', () => {
-  // Toggle navigation
-  navLinks.classList.toggle('active');
-  hamburger.classList.toggle('active');
-  
-  // Animate links
-  navLinksItems.forEach((link, index) => {
-    if (link.style.animation) {
-      link.style.animation = '';
-    } else {
-      link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-    }
-  });
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-    navLinks.classList.remove('active');
-    hamburger.classList.remove('active');
-  }
-});
-
-// Close mobile menu when clicking a link
-navLinksItems.forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    hamburger.classList.remove('active');
-  });
-});
-
-// Add animation keyframes to the stylesheet
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes navLinkFade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-`;
-document.head.appendChild(style);
-
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const navLinksItems = document.querySelectorAll('.nav-links a');
-
-    // Toggle menu when hamburger is clicked
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    });
-
-    // Close menu when a nav link is clicked
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
     });
 });
 

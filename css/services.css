@@ -477,34 +477,6 @@ body {
         padding: 15px 5%;
     }
     
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: 0.5s;
-        z-index: 100;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    }
-    
-    .nav-links.active {
-        right: 0;
-    }
-    
-    .nav-links li {
-        margin: 15px 0;
-    }
-    
-    .menu-btn {
-        display: flex;
-        z-index: 101;
-    }
-    
     /* Services hero */
     .services-hero {
         padding: 60px 5%;
