@@ -6,9 +6,10 @@
     <title>Apply - Anchor University Creche</title>
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/mobile-menu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <!-- Announcement Bar -->
@@ -32,11 +33,11 @@
                     <li style="--i:2"><a href="about.html">About Us</a></li>
                     <li style="--i:3"><a href="services.html">Services</a></li>
                     <li style="--i:4"><a href="contact.html">Contact Us</a></li>
-                    <li style="--i:5" class="mobile-apply"><a href="apply.html" class="apply-btn">Apply now</a></li>
+                    <li style="--i:5" class="mobile-apply"><a href="apply.html" class="apply-btn active">Apply now</a></li>
                 </ul>
 
                 <div class="nav-right">
-                    <a href="apply.html" class="apply-btn desktop-apply">Apply now</a>
+                    <a href="apply.html" class="apply-btn desktop-apply active">Apply now</a>
                     <button class="menu-btn" aria-label="Toggle menu">
                         <span></span>
                         <span></span>
@@ -49,24 +50,19 @@
 
     <!-- Page Title -->
     <section class="page-title">
-        <h1>Contact Us</h1>
+        <h1>Apply Now</h1>
         <br>
-        <p>Any question or remarks? Just write us a message!</p>
+        <p>Complete the form below to apply for enrollment at Anchor University Creche</p>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Application Form Section -->
     <section class="contact-section">
         <div class="container">
-            <div class="contact-intro">
-                <!-- <h2>Get in Touch</h2>
-                <p>We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p> -->
-            </div>
-            
-            <!-- <div class="contact-container">
+            <div class="contact-container">
                 <div class="contact-grid">
                     <div class="contact-info-panel">
-                        <h2>Contact Information</h2>
-                        <p>Have questions about our programs? We're here to help!</p>
+                        <h2>Application Information</h2>
+                        <p>Please fill out all required fields accurately. We'll review your application and get back to you within 48 hours.</p>
 
                         <div class="contact-details">
                             <div class="contact-item">
@@ -89,10 +85,11 @@
                             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         </div>
-                    </div> -->
+                    </div>
                     
                     <div class="contact-form-panel">
-                        <form id="contactForm" action="https://formspree.io/f/mrbkbkaz" method="POST">
+                        <form id="applicationForm" action="https://formspree.io/f/mrbkbkaz" method="POST">
+                            <h3>Child's Information</h3>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="firstName">First Name</label>
@@ -103,54 +100,99 @@
                                     <input type="text" id="lastName" name="lastName" required>
                                 </div>
                             </div>
-                            
+
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" required>
+                                    <label for="gender">Gender</label>
+                                    <select id="gender" name="gender" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <input type="tel" id="phone" name="phone">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" id="dob" name="dob" required>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
-                                <label>What would you like to discuss?</label>
-                                <div class="subject-options">
-                                    <div class="subject-option">
-                                        <input type="checkbox" id="enrollment" name="subject" value="Enrollment">
-                                        <label for="enrollment">Enrollment</label>
-                                    </div>
-                                    <div class="subject-option">
-                                        <input type="checkbox" id="programs" name="subject" value="Programs">
-                                        <label for="programs">Programs</label>
-                                    </div>
-                                    <div class="subject-option">
-                                        <input type="checkbox" id="fees" name="subject" value="Fees & Payments">
-                                        <label for="fees">Fees & Payments</label>
-                                    </div>
-                                    <div class="subject-option">
-                                        <input type="checkbox" id="other" name="subject" value="Other">
-                                        <label for="other">Others</label>
-                                    </div>
+                                <label for="address">Home Address</label>
+                                <textarea id="address" name="address" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="stateOfOrigin">State of Origin</label>
+                                <input type="text" id="stateOfOrigin" name="stateOfOrigin" required>
+                            </div>
+
+                            <h3>Father's Information</h3>
+                            <div class="form-group">
+                                <label for="fatherName">Full Name</label>
+                                <input type="text" id="fatherName" name="fatherName" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fatherPhone1">Phone Number 1</label>
+                                    <input type="tel" id="fatherPhone1" name="fatherPhone1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fatherPhone2">Phone Number 2</label>
+                                    <input type="tel" id="fatherPhone2" name="fatherPhone2" required>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" required></textarea>
+                                <label for="fatherEmail">Email Address</label>
+                                <input type="email" id="fatherEmail" name="fatherEmail" required>
                             </div>
-                            
-                            <!-- Hidden field to specify the email recipient -->
-                            <input type="hidden" name="_replyto" value="favoureffiong2008@gmail.com">
-                            
-                            <!-- Redirect after submission -->
-                            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+                            <div class="form-group">
+                                <label for="fatherOccupation">Occupation</label>
+                                <input type="text" id="fatherOccupation" name="fatherOccupation" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fatherWorkAddress">Work Address</label>
+                                <textarea id="fatherWorkAddress" name="fatherWorkAddress" required></textarea>
+                            </div>
+
+                            <h3>Mother's Information</h3>
+                            <div class="form-group">
+                                <label for="motherName">Full Name</label>
+                                <input type="text" id="motherName" name="motherName" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="motherPhone1">Phone Number 1</label>
+                                    <input type="tel" id="motherPhone1" name="motherPhone1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="motherPhone2">Phone Number 2</label>
+                                    <input type="tel" id="motherPhone2" name="motherPhone2" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="motherEmail">Email Address</label>
+                                <input type="email" id="motherEmail" name="motherEmail" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="motherOccupation">Occupation</label>
+                                <input type="text" id="motherOccupation" name="motherOccupation" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="motherWorkAddress">Work Address</label>
+                                <textarea id="motherWorkAddress" name="motherWorkAddress" required></textarea>
+                            </div>
                             
                             <div id="formStatus"></div>
                             
-                            <button type="submit" class="send-message-btn">Send Message</button>
+                            <button type="submit" class="send-message-btn">Submit Application</button>
                         </form>
                     </div>
                 </div>
@@ -196,16 +238,6 @@
                         </ul>
                     </div>
 
-                    <!-- <div class="quick-links">
-                        <h3>Programs</h3>
-                        <ul>
-                            <li><a href="#">Curriculum</a></li>
-                            <li><a href="#">Activities</a></li>
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">Gallery</a></li>
-                        </ul>
-                    </div> -->
-
                     <div class="contact-info">
                         <h3>Contact Us</h3>
                         <ul>
@@ -234,4 +266,4 @@
 
     <script src="js/index.js"></script>
 </body>
-</html> 
+</html>
