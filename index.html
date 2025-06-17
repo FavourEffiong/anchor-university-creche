@@ -17,28 +17,32 @@
     </div>
 
     <!-- Header/Navigation -->
-    <header>
+    <header class="header">
         <nav class="navbar">
-            <div class="logo">
-                <img src="images/logo.png" alt="Anchor University Logo">
-                <span class="logo-text">AUL Creche</span>
-            </div>
-            
-            <ul class="nav-links">
-                <li style="--i:1"><a href="#" class="active">Home</a></li>
-                <li style="--i:2"><a href="about.html">About Us</a></li>
-                <li style="--i:3"><a href="services.html">Services</a></li>
-                <li style="--i:4"><a href="contact.html">Contact Us</a></li>
-                <li style="--i:5" class="mobile-apply"><a href="apply.html">Apply now</a></li>
-            </ul>
+            <div class="navbar-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Anchor University Logo">
+                        <span class="logo-text">AUL Creche</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li style="--i:1"><a href="#" class="active">Home</a></li>
+                    <li style="--i:2"><a href="about.html">About Us</a></li>
+                    <li style="--i:3"><a href="services.html">Services</a></li>
+                    <li style="--i:4"><a href="contact.html">Contact Us</a></li>
+                    <li style="--i:5" class="mobile-apply"><a href="apply.html" class="apply-btn">Apply now</a></li>
+                </ul>
 
-            <div class="nav-right">
-                <a href="#" class="apply-btn desktop-apply">Apply now</a>
-                <button class="menu-btn" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="nav-right">
+                    <a href="apply.html" class="apply-btn desktop-apply">Apply now</a>
+                    <button class="menu-btn" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
@@ -47,13 +51,31 @@
     <section class="hero">
         <div class="hero-content">
             <h1>ANCHOR UNIVERSITY<br>CRECHE</h1>
-            <a href="#" class="apply-now-btn">Apply Now</a>
+            <p class="hero-subtitle">Nurturing Young Minds, Building Bright Futures</p>
+            <div class="hero-buttons">
+                <a href="apply.html" class="apply-now-btn">Apply Now</a>
+                <a href="about.html" class="learn-more-btn">Learn More</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Happy Parents</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Expert Staff</span>
+                </div>
+            </div>
         </div>
         
         <div class="hero-image-container">
-            <!-- <div class="hero-image"> -->
-                <!-- <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=2070&auto=format&fit=crop" alt="Child at creche"> -->
-            <!-- </div> -->
+            <div class="hero-image">
+                <img src="images/hero-image.jpg" alt="Children playing at Anchor University Creche">
+            </div>
             <div class="decorative-elements">
                 <div class="shape shape-1"></div>
                 <div class="shape shape-2"></div>

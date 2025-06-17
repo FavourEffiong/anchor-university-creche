@@ -20,7 +20,7 @@ body {
 }
 
 /* Navbar Styles */
-.navbar {
+/* .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -86,7 +86,7 @@ body {
     height: 2px;
     background-color: #333;
     transition: 0.3s;
-}
+} */
 
 /* Menu button animation */
 .menu-btn.active span:nth-child(1) {

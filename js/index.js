@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Sticky Header
+    const header = document.querySelector('.header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    });
+
     // Mobile menu functionality
     const menuBtn = document.querySelector('.menu-btn');
     const navLinks = document.querySelector('.nav-links');
@@ -11,16 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     if (menuBtn) {
-        menuBtn.addEventListener('click', toggleMenu);
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
     }
     
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-        const isClickInsideMenu = navLinks && navLinks.contains(event.target);
-        const isClickOnMenuBtn = menuBtn && menuBtn.contains(event.target);
-        
-        if (navLinks && navLinks.classList.contains('active') && !isClickInsideMenu && !isClickOnMenuBtn) {
-            toggleMenu();
+        if (navLinks && navLinks.classList.contains('active')) {
+            const isClickInsideMenu = navLinks.contains(event.target);
+            const isClickOnMenuBtn = menuBtn.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnMenuBtn) {
+                toggleMenu();
+            }
         }
     });
     
