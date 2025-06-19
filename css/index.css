@@ -112,7 +112,7 @@ body {
 .apply-btn {
     display: inline-block;
     padding: 12px 25px;
-    background: #4B0082;
+    background: #4169E1;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -214,7 +214,8 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 60vh !important;
+    min-height: 300px;
     background-image: url('https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
@@ -224,6 +225,7 @@ body {
     justify-content: center;
     color: #fff;
     text-align: center;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -233,7 +235,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    /* background: linear-gradient(120deg, rgba(75,0,130,0.7) 0%, rgba(65,105,225,0.5) 100%); */
     z-index: 1;
 }
 
@@ -250,26 +252,28 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    padding: 0 20px;
-    text-align: left;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    margin-left: 10%;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .hero h1 {
-    font-size: 4.5rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    text-shadow: none;
-    letter-spacing: 0.1em;
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    white-space: nowrap;
-    text-align: left;
-    color: #ffff;
+    color: #fff;
+    text-shadow: 0 6px 32px rgba(75,0,130,0.25), 0 1px 0 #fff2;
+    line-height: 1.1;
 }
 
 .hero-text {
@@ -283,16 +287,34 @@ body {
     color: #4B0082;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
+}
+
 .apply-now-btn {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 700;
     color: #fff;
-    background-color: #4B0082;
+    background: linear-gradient(90deg, #4B0082 0%, #4169E1 100%);
     border-radius: 50px;
     text-decoration: none;
-    transition: none;
+    border: none;
+    box-shadow: 0 4px 24px rgba(75,0,130,0.18);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+.apply-now-btn:hover, .apply-now-btn:focus {
+    background: linear-gradient(90deg, #4169E1 0%, #4B0082 100%);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(65,105,225,0.22);
 }
 
 .hero-image-container {
@@ -358,9 +380,7 @@ body {
 
 /* Welcome Section Styles - Plain Version */
 .welcome-section {
-    background: none;
-    padding: 40px 0 20px 0;
-    text-align: center;
+    padding: 80px 0 60px 0;
 }
 .welcome-section .container {
     max-width: 700px;
@@ -401,30 +421,33 @@ body {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.3rem;
     }
-    
-    .hero-image {
-        height: 400px;
+    .hero-content {
+        padding: 30px 10px;
+    }
+    .apply-now-btn {
+        font-size: 1.1rem;
+        padding: 1rem 2.2rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .hero {
+        height: 40vh !important;
+        min-height: 180px;
+        padding: 0 0 20px 0;
+    }
     .hero-content {
-        margin-left: 20px;
+        padding: 18px 4vw;
     }
-    
     .hero h1 {
-        font-size: 2rem;
-        letter-spacing: 0.05em;
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
     }
-    
-    /* .admission-text {
-        font-size: 1.2rem;
-    } */
-    
-    .hero-image {
-        height: 300px;
+    .apply-now-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
     }
 }
 
@@ -860,14 +883,36 @@ body {
 }
 
 .faq-image {
-    flex: 1;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f3eaff 0%, #e0e7ff 100%);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(75,0,130,0.10);
+    overflow: hidden;
     position: relative;
-    padding-bottom: 40px;
 }
-
+.faq-image::after {
+    content: '';
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    width: 60px;
+    height: 60px;
+    background: rgba(75,0,130,0.08);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
 .faq-image img {
     width: 100%;
-    border-radius: 50% 50% 50% 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: none;
+    display: block;
     position: relative;
     z-index: 2;
 }
@@ -1337,4 +1382,399 @@ body.menu-open {
         font-weight: 600;
         transition: all 0.3s ease;
     }
+}
+
+
+/* Fix for menu overlay */
+body.menu-open {
+    overflow: hidden;
+}
+
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+.user-dropbtn {
+    background: #fff;
+    color: #4B0082;
+    border: 1px solid #4B0082;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+.user-dropbtn:hover, .user-dropdown:hover .user-dropbtn {
+    background: #f3eaff;
+}
+.user-dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 140px;
+    box-shadow: 0 8px 16px rgba(75,0,130,0.08);
+    border-radius: 8px;
+    z-index: 1001;
+    right: 0;
+    top: 110%;
+}
+.user-dropdown-content a {
+    color: #4B0082;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f3eaff;
+    font-weight: 500;
+    border-radius: 0;
+    background: none;
+    transition: background 0.2s;
+}
+.user-dropdown-content a:last-child {
+    border-bottom: none;
+}
+.user-dropdown-content a:hover {
+    background: #f3eaff;
+}
+.user-dropdown:hover .user-dropdown-content {
+    display: block;
+}
+@media (max-width: 768px) {
+    .user-dropdown { display: none; }
+}
+
+/* --- Welcome Profile Section Styling --- */
+.welcome-profile {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 60px auto 0 auto;
+}
+.welcome-profile-image {
+  flex: 0 0 370px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(75,0,130,0.10);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 270px;
+  min-height: 370px;
+}
+.welcome-profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
+.welcome-profile-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10px;
+  text-align: left;
+}
+.welcome-profile-text h2,
+.welcome-profile-text p,
+.welcome-profile-role {
+  text-align: left;
+}
+.welcome-profile-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #222;
+  font-family: 'Fredoka', sans-serif;
+}
+.welcome-profile-role {
+  font-size: 1.3rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+.welcome-profile-text p {
+  font-size: 1.13rem;
+  color: #333;
+  margin-bottom: 1.3rem;
+  line-height: 1.7;
+  font-family: inherit;
+}
+.welcome-profile-text strong {
+  font-weight: 700;
+  color: #222;
+}
+@media (max-width: 900px) {
+  .welcome-profile {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .welcome-profile-image {
+    width: 100%;
+    min-width: 0;
+    min-height: 220px;
+    max-width: 400px;
+  }
+  .welcome-profile-text {
+    padding-top: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .welcome-profile-text h2,
+  .welcome-profile-text p,
+  .welcome-profile-role {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .welcome-profile {
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .welcome-profile-image {
+    max-width: 95vw;
+    min-height: 140px;
+    border-radius: 14px;
+  }
+  .welcome-profile-image img {
+    border-radius: 14px;
+  }
+  .welcome-profile-text h2 {
+    font-size: 1.4rem;
+  }
+  .welcome-profile-role {
+    font-size: 1rem;
+  }
+  .welcome-profile-text p {
+    font-size: 1rem;
+  }
+}
+/* --- End Welcome Profile Section Styling --- */
+
+/* --- Welcome Block Section Styling --- */
+.welcome-block {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  max-width: 1100px;
+  margin: 80px auto 0 auto;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+.welcome-block-image {
+  flex: 0 0 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 20px;
+  box-shadow: none;
+  overflow: hidden;
+  min-width: 240px;
+  min-height: 340px;
+}
+.welcome-block-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+.welcome-block-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+.welcome-block-text h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #4B0082;
+  margin-bottom: 24px;
+  font-family: 'Fredoka', sans-serif;
+}
+.welcome-block-text p {
+  font-size: 1.25rem;
+  color: #333;
+  line-height: 1.8;
+}
+.welcome-block-text strong {
+  color: #4169E1;
+  font-weight: 700;
+}
+@media (max-width: 800px) {
+  .welcome-block {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 0 8vw;
+    margin-top: 40px;
+  }
+  .welcome-block-image {
+    width: 100%;
+    min-width: 0;
+    min-height: 180px;
+    max-width: 350px;
+    border-radius: 14px;
+  }
+  .welcome-block-image img {
+    border-radius: 14px;
+  }
+  .welcome-block-text {
+    align-items: center;
+    text-align: center;
+  }
+  .welcome-block-text h2 {
+    font-size: 1.5rem;
+  }
+  .welcome-block-text p {
+    font-size: 1.05rem;
+  }
+}
+/* --- End Welcome Block Section Styling --- */
+
+/* Responsive for Welcome Block */
+@media (max-width: 1000px) {
+  .welcome-block {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    max-width: 98vw;
+    margin: 40px auto 0 auto;
+    padding: 0 2vw;
+  }
+  .welcome-block-image {
+    width: 100%;
+    min-width: 0;
+    min-height: 180px;
+    max-width: 350px;
+    border-radius: 14px;
+  }
+  .welcome-block-image img {
+    border-radius: 14px;
+  }
+  .welcome-block-text {
+    align-items: center;
+    text-align: center;
+  }
+  .welcome-block-text h2 {
+    font-size: 1.5rem;
+  }
+  .welcome-block-text p {
+    font-size: 1.05rem;
+  }
+}
+
+/* Responsive for FAQ Image */
+@media (max-width: 900px) {
+  .faq-image {
+    width: 280px;
+    height: 280px;
+  }
+}
+@media (max-width: 600px) {
+  .faq-image {
+    width: 98vw;
+    max-width: 340px;
+    height: 40vw;
+    min-height: 160px;
+    border-radius: 12px;
+  }
+  .faq-image img {
+    border-radius: 12px;
+  }
+}
+
+/* Responsive for FAQ Section Layout */
+@media (max-width: 900px) {
+  .faq-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 32px;
+  }
+  .faq-text {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .faq-section {
+    padding: 40px 2vw;
+  }
+  .faq-content {
+    gap: 18px;
+  }
+  .faq-text h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Responsive for General Containers */
+@media (max-width: 600px) {
+  .container, .welcome-section .container {
+    padding: 0 2vw;
+  }
+}
+
+/* CTA Section */
+.services-cta {
+    padding: 100px 5%;
+    background: linear-gradient(135deg, #4B0082 0%, #4169E1 100%);
+    color: white;
+    text-align: center;
+}
+
+.services-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.services-cta p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.primary-btn {
+    background: white;
+    color: #4B0082;
+}
+
+.secondary-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-3px);
 }

@@ -201,21 +201,61 @@ body {
     margin: 0;
 }
 
-.core-values ul {
-    list-style: none;
+.core-values {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(75,0,130,0.08);
+    padding: 32px 28px 24px 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+.core-values:hover {
+    box-shadow: 0 8px 32px rgba(75,0,130,0.16);
+}
+.core-values h2 {
+    color: #4B0082;
+    font-size: 2rem;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+.core-values ol {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
     padding: 0;
     margin: 0;
+    list-style: none;
 }
-
 .core-values li {
-    font-size: 1.1rem;
-    color: #333;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    background: linear-gradient(90deg, #f3eaff 0%, #e0e7ff 100%);
+    color: #4B0082;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 14px 28px;
+    margin: 0;
+    border: none;
+    box-shadow: 0 2px 8px rgba(75,0,130,0.04);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.2s, transform 0.2s;
 }
-
-.core-values li:last-child {
-    border-bottom: none;
+.core-values li::before {
+    content: "\f058";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #4169E1;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+.core-values li:hover {
+    background: linear-gradient(90deg, #e0e7ff 0%, #f3eaff 100%);
+    transform: translateY(-2px) scale(1.03);
 }
 
 /* Responsive Styles */
@@ -276,6 +316,17 @@ body {
     
     .menu-btn {
         display: flex;
+    }
+
+    .core-values {
+        padding: 20px 10px 16px 10px;
+    }
+    .core-values h2 {
+        font-size: 1.4rem;
+    }
+    .core-values li {
+        font-size: 1rem;
+        padding: 10px 10px;
     }
 }
 
@@ -393,7 +444,10 @@ body {
 }
 
 @media (max-width: 480px) {
-    // ... existing responsive code ...
+    .core-values li {
+        font-size: 1rem;
+        padding: 10px 10px;
+    }
 }
 
 /* What We Offer Section */
@@ -490,4 +544,55 @@ body {
     .offers-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* CTA Section */
+.services-cta {
+    padding: 100px 5%;
+    background: linear-gradient(135deg, #4B0082 0%, #4169E1 100%);
+    color: white;
+    text-align: center;
+}
+
+.services-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.services-cta p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.primary-btn {
+    background: white;
+    color: #4B0082;
+}
+
+.secondary-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-3px);
 }

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now - Anchor University Creche</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/apply.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>🔔 Applications are open!! 🔔</p>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Anchor University Logo">
+                        <span class="logo-text">AUL Creche</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li style="--i:1"><a href="index.html">Home</a></li>
+                    <li style="--i:2"><a href="about.html">About Us</a></li>
+                    <li style="--i:3"><a href="services.html">Services</a></li>
+                    <li style="--i:4"><a href="contact.html">Contact Us</a></li>
+                    <li style="--i:4" class="mobile-apply"><a href="backend/auth/login.html">Login</a></li>
+                    <li style="--i:4" class="mobile-apply"><a href="backend/auth/register.html">Register</a></li>
+                    <li style="--i:5" class="mobile-apply"><a href="apply.html" class="apply-btn active">Apply now</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <a href="apply.html" class="apply-btn desktop-apply">Apply now</a>
+                    <div class="user-dropdown">
+                        <button class="user-dropbtn" aria-label="User menu"><i class="fa fa-user"></i> <span>Account</span> <i class="fa fa-caret-down"></i></button>
+                        <div class="user-dropdown-content">
+                            <a href="backend/auth/login.html">Login</a>
+                            <a href="backend/auth/register.html">Register</a>
+                        </div>
+                    </div>
+                    <button class="menu-btn" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <h1>Apply Now</h1>
+        <br>
+        <p>Complete the application form below to enroll your child in our creche</p>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="application-section">
+        <div class="container">
+            <div class="application-container">
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Child Info</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Father's Info</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Mother's Info</div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Review</div>
+                    </div>
+                </div>
+
+                <!-- Application Form -->
+                <form id="applicationForm" action="https://formspree.io/f/mrbkbkaz" method="POST">
+                    <!-- Step 1: Child Information -->
+                    <div class="form-step active" data-step="1">
+                        <h2>Child Information</h2>
+                        <p>Please provide the basic information about your child</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="gender">Gender *</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dateOfBirth">Date of Birth *</label>
+                                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="homeAddress">Home Address *</label>
+                            <textarea id="homeAddress" name="homeAddress" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="stateOfOrigin">State of Origin *</label>
+                            <input type="text" id="stateOfOrigin" name="stateOfOrigin" required>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Father's Information -->
+                    <div class="form-step" data-step="2">
+                        <h2>Father's Information</h2>
+                        <p>Please provide the father's contact and work details</p>
+                        
+                        <div class="form-group">
+                            <label for="fatherName">Name of Father *</label>
+                            <input type="text" id="fatherName" name="fatherName" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fatherPhone1">Father's Phone Number 1 *</label>
+                                <input type="tel" id="fatherPhone1" name="fatherPhone1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fatherPhone2">Father's Phone Number 2</label>
+                                <input type="tel" id="fatherPhone2" name="fatherPhone2">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fatherEmail">Father's Email *</label>
+                            <input type="email" id="fatherEmail" name="fatherEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fatherOccupation">Father's Occupation *</label>
+                            <input type="text" id="fatherOccupation" name="fatherOccupation" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fatherWorkAddress">Father's Work Address *</label>
+                            <textarea id="fatherWorkAddress" name="fatherWorkAddress" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Mother's Information -->
+                    <div class="form-step" data-step="3">
+                        <h2>Mother's Information</h2>
+                        <p>Please provide the mother's contact and work details</p>
+                        
+                        <div class="form-group">
+                            <label for="motherName">Name of Mother *</label>
+                            <input type="text" id="motherName" name="motherName" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="motherPhone1">Mother's Phone Number 1 *</label>
+                                <input type="tel" id="motherPhone1" name="motherPhone1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="motherPhone2">Mother's Phone Number 2</label>
+                                <input type="tel" id="motherPhone2" name="motherPhone2">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="motherEmail">Mother's Email *</label>
+                            <input type="email" id="motherEmail" name="motherEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="motherOccupation">Mother's Occupation *</label>
+                            <input type="text" id="motherOccupation" name="motherOccupation" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="motherWorkAddress">Mother's Work Address *</label>
+                            <textarea id="motherWorkAddress" name="motherWorkAddress" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Review and Submit -->
+                    <div class="form-step" data-step="4">
+                        <h2>Review Your Application</h2>
+                        <p>Please review all the information before submitting</p>
+                        
+                        <div class="review-section">
+                            <h3>Child Information</h3>
+                            <div class="review-item">
+                                <strong>Name:</strong> <span id="reviewName"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Gender:</strong> <span id="reviewGender"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Date of Birth:</strong> <span id="reviewDOB"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Home Address:</strong> <span id="reviewAddress"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>State of Origin:</strong> <span id="reviewState"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="review-section">
+                            <h3>Father's Information</h3>
+                            <div class="review-item">
+                                <strong>Name:</strong> <span id="reviewFatherName"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Phone Numbers:</strong> <span id="reviewFatherPhones"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Email:</strong> <span id="reviewFatherEmail"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Occupation:</strong> <span id="reviewFatherOccupation"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Work Address:</strong> <span id="reviewFatherWork"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="review-section">
+                            <h3>Mother's Information</h3>
+                            <div class="review-item">
+                                <strong>Name:</strong> <span id="reviewMotherName"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Phone Numbers:</strong> <span id="reviewMotherPhones"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Email:</strong> <span id="reviewMotherEmail"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Occupation:</strong> <span id="reviewMotherOccupation"></span>
+                            </div>
+                            <div class="review-item">
+                                <strong>Work Address:</strong> <span id="reviewMotherWork"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Navigation Buttons -->
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                        <button type="submit" class="btn btn-success" id="submitBtn" style="display: none;">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h2>Join Our Newsletter</h2>
+            <p>Subscribe to our newsletter to get updated on our latest and new activities</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit" class="subscribe-button">Subscribe now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h1>Anchor University Creche</h1>
+                    <p>It is our goal to provide age appropriate opportunity for every child enrolled in AUL Creche enrichment classes.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="quick-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-info">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Ayobo Ipaja Lagos
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                +2348039090931
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                aulcrechesupport@email.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anchor University Creche. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/apply.js"></script>
+</body>
+</html> 

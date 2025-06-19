@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Anchor University Creche</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="icon" href="../../images/logo.png">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <img src="../../images/logo.png" alt="Anchor University Creche Logo">
+            <h2>Admin Dashboard</h2>
+            <nav>
+                <a href="#" onclick="loadSection('users')">Manage Users</a>
+                <a href="#" onclick="loadSection('fees')">Manage Fees</a>
+                <a href="#" onclick="loadSection('payments')">View Payments</a>
+                <a href="#" onclick="loadSection('registration')">Registration Settings</a>
+                <a href="#" id="profile-link"><i class="fa fa-user"></i> Profile</a>
+            </nav>
+            <div style="margin-top:1.5rem; display:flex; align-items:center; justify-content:center; width:100%;">
+                <button id="notif-bell" style="background:none; border:none; cursor:pointer; position:relative; font-size:1.5rem; color:#fff;">
+                    <i class="fa fa-bell"></i>
+                    <span class="notif-badge" style="position:absolute;top:0;right:0;background:#d32f2f;color:#fff;border-radius:50%;padding:2px 6px;font-size:0.8rem;display:none;">0</span>
+                </button>
+            </div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+        <main class="dashboard-main">
+            <div class="welcome">Welcome, Admin!</div>
+            <div id="section"></div>
+        </main>
+    </div>
+    <script>
+    function logout() {
+        fetch('../../auth/logout.php', { method: 'POST' }).then(() => {
+            window.location.href = '/backend/auth/login.html';
+        });
+    }
+    function loadSection(section) {
+        const sectionDiv = document.getElementById('section');
+        sectionDiv.innerHTML = 'Loading...';
+        let url = '';
+        if (section === 'users') url = 'manage_users.php';
+        if (section === 'fees') url = 'manage_fees.php';
+        if (section === 'payments') url = 'view_payments.php';
+        if (section === 'registration') url = 'settings.php';
+        fetch(url).then(r => r.json()).then(data => {
+            if (!data.success) { sectionDiv.innerHTML = data.message; return; }
+            if (section === 'users') {
+                sectionDiv.innerHTML = '<h3>All Users</h3>' + data.users.map(u => {
+                    let btn = '';
+                    if (u.role !== 'admin') {
+                        if (u.active == 1) {
+                            btn = `<button onclick=\'toggleUser(${u.id},"disable")\'>Disable</button>`;
+                        } else {
+                            btn = `<button onclick=\'toggleUser(${u.id},"enable")\'>Enable</button>`;
+                        }
+                    }
+                    return `<div>${u.name} (${u.role}) - ${u.email} [${u.active == 1 ? 'Active' : 'Disabled'}] ${btn}</div>`;
+                }).join('');
+            } else if (section === 'fees') {
+                sectionDiv.innerHTML = '<h3>All Fees</h3>' + data.fees.map(f => `<div>${f.child_name} (${f.parent_name}): ₦${f.amount} - ${f.status}</div>`).join('');
+            } else if (section === 'payments') {
+                sectionDiv.innerHTML = '<h3>All Payments</h3>' + data.payments.map(p => `<div>${p.parent_name}: ₦${p.amount} - ${p.status} (${p.payment_date})</div>`).join('');
+            } else if (section === 'registration') {
+                sectionDiv.innerHTML = `<h3>Registration Settings</h3>
+                    <div>Staff Registration: <b>${data.staff_registration_enabled === '1' ? 'Enabled' : 'Disabled'}</b>
+                        <button onclick=\'toggleReg("staff",${data.staff_registration_enabled === '1' ? 0 : 1})\'>${data.staff_registration_enabled === '1' ? 'Disable' : 'Enable'}</button></div>
+                    <div>Parent Registration: <b>${data.parent_registration_enabled === '1' ? 'Enabled' : 'Disabled'}</b>
+                        <button onclick=\'toggleReg("parent",${data.parent_registration_enabled === '1' ? 0 : 1})\'>${data.parent_registration_enabled === '1' ? 'Disable' : 'Enable'}</button></div>`;
+            }
+        });
+    }
+    function toggleUser(id, action) {
+        fetch('manage_users.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `user_id=${id}&action=${action}`
+        })
+        .then(r => r.json())
+        .then(data => {
+            alert(data.message);
+            loadSection('users');
+        });
+    }
+    function toggleReg(role, value) {
+        fetch('settings.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `role=${role}&value=${value}`
+        })
+        .then(r => r.json())
+        .then(data => {
+            alert(data.message);
+            loadSection('registration');
+        });
+    }
+    </script>
+</body>
+</html> 

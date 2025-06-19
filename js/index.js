@@ -19,11 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.querySelector('.menu-btn');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
-    
+    // Add overlay for mobile menu
+    let menuOverlay = document.querySelector('.menu-overlay');
+    if (!menuOverlay) {
+        menuOverlay = document.createElement('div');
+        menuOverlay.className = 'menu-overlay';
+        document.body.appendChild(menuOverlay);
+    }
     function toggleMenu() {
         menuBtn.classList.toggle('active');
         navLinks.classList.toggle('active');
         body.classList.toggle('menu-open');
+        menuOverlay.classList.toggle('active');
     }
     
     if (menuBtn) {
@@ -33,15 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Close menu when clicking outside
+    // Close menu when clicking outside or on overlay
     document.addEventListener('click', function(event) {
         if (navLinks && navLinks.classList.contains('active')) {
             const isClickInsideMenu = navLinks.contains(event.target);
             const isClickOnMenuBtn = menuBtn.contains(event.target);
-            
-            if (!isClickInsideMenu && !isClickOnMenuBtn) {
+            const isClickOnOverlay = menuOverlay.contains(event.target);
+            if (!isClickInsideMenu && !isClickOnMenuBtn && !isClickOnOverlay) {
                 toggleMenu();
             }
+        }
+    });
+    
+    menuOverlay.addEventListener('click', function() {
+        if (navLinks.classList.contains('active')) {
+            toggleMenu();
         }
     });
     

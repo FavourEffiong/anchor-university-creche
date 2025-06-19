@@ -1,0 +1,120 @@
+/* Admin Dashboard Modern Styles */
+body {
+  background: #f4f6fb;
+  font-family: 'Fredoka', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+.dashboard-sidebar {
+  width: 230px;
+  background: #1a237e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 1rem 1rem;
+  box-shadow: 2px 0 16px rgba(26,35,126,0.08);
+}
+.dashboard-sidebar img {
+  width: 70px;
+  margin-bottom: 1.5rem;
+}
+.dashboard-sidebar h2 {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-align: center;
+}
+.dashboard-sidebar nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.dashboard-sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+  font-size: 1.05rem;
+}
+.dashboard-sidebar nav a:hover, .dashboard-sidebar nav a.active {
+  background: #3949ab;
+}
+.dashboard-sidebar .logout-btn {
+  margin-top: auto;
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+}
+.dashboard-sidebar .logout-btn:hover {
+  background: #b71c1c;
+}
+.dashboard-main {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.dashboard-main .welcome {
+  font-size: 1.3rem;
+  color: #3949ab;
+  margin-bottom: 2rem;
+}
+.dashboard-main #section {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2rem 1.5rem;
+  min-height: 200px;
+  margin-bottom: 2rem;
+}
+.dashboard-main h3 {
+  color: #1a237e;
+  margin-top: 0;
+}
+.dashboard-main div {
+  margin-bottom: 1rem;
+}
+@media (max-width: 900px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  .dashboard-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: none;
+  }
+  .dashboard-sidebar nav {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .dashboard-main {
+    padding: 1.5rem 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .dashboard-main #section {
+    padding: 1rem 0.5rem;
+  }
+  .dashboard-sidebar {
+    padding: 0.5rem;
+  }
+} 

@@ -32,11 +32,22 @@
                     <li style="--i:2"><a href="about.html">About Us</a></li>
                     <li style="--i:3"><a href="services.html">Services</a></li>
                     <li style="--i:4"><a href="contact.html">Contact Us</a></li>
-                    <li style="--i:5" class="mobile-apply"><a href="apply.html" class="apply-btn">Apply now</a></li>
+                    <!-- <li style="--i:5"><a href="backend/auth/login.html">Login</a></li>
+                    <li style="--i:6"><a href="backend/auth/register.html">Sign Up</a></li> -->
+                    <li style="--i:4" class="mobile-apply"><a href="backend/auth/login.html">Login</a></li>
+                    <li style="--i:4" class="mobile-apply"><a href="backend/auth/register.html">Register</a></li>
+                    <li style="--i:7" class="mobile-apply"><a href="apply.html" class="apply-btn">Apply now</a></li>
                 </ul>
 
                 <div class="nav-right">
                     <a href="apply.html" class="apply-btn desktop-apply">Apply now</a>
+                    <div class="user-dropdown">
+                        <button class="user-dropbtn" aria-label="User menu"><i class="fa fa-user"></i> <span>Account</span> <i class="fa fa-caret-down"></i></button>
+                        <div class="user-dropdown-content">
+                            <a href="backend/auth/login.html">Login</a>
+                            <a href="backend/auth/register.html">Register</a>
+                        </div>
+                    </div>
                     <button class="menu-btn" aria-label="Toggle menu">
                         <span></span>
                         <span></span>
@@ -51,28 +62,12 @@
     <section class="hero">
         <div class="hero-content">
             <h1>ANCHOR UNIVERSITY<br>CRECHE</h1>
-            <p class="hero-subtitle">Nurturing Young Minds, Building Bright Futures</p>
-            <div class="hero-buttons">
+            <!-- <div class="hero-buttons">
                 <a href="apply.html" class="apply-now-btn">Apply Now</a>
-                <a href="about.html" class="learn-more-btn">Learn More</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">8+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100+</span>
-                    <span class="stat-label">Happy Parents</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-label">Expert Staff</span>
-                </div>
-            </div>
+            </div> -->
         </div>
         
-        <div class="hero-image-container">
+        <!-- <div class="hero-image-container">
             <div class="hero-image">
                 <img src="images/hero-image.jpg" alt="Children playing at Anchor University Creche">
             </div>
@@ -81,7 +76,7 @@
                 <div class="shape shape-2"></div>
                 <div class="shape shape-3"></div>
                 <div class="shape shape-4"></div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -190,12 +185,31 @@
 
     <!-- Welcome Section -->
     <section class="welcome-section">
-        <div class="container">
-            <h2>Welcome to Anchor University Creche</h2>
-            <p>Anchor University Creche is a government-approved early childhood education center offering a nurturing environment for children aged 0–3 years. Managed by Dr. Mrs Toyin Ojo, our institution prioritizes holistic development through play-based learning, structured curricula, and a safe, inclusive atmosphere. Located in the heart of Ayobo Iyana Ipaja, we cater to working-class families seeking quality childcare and foundational education.</p>
+      <div class="welcome-block">
+        <div class="welcome-block-image">
+          <img src="images/welcome.jpg" alt="Dr. Mrs Toyin Ojo" />
         </div>
+        <div class="welcome-block-text">
+          <h2>Welcome to Anchor University Creche</h2>
+          <p>
+            Anchor University Creche is a government-approved early childhood education center offering a nurturing environment for children aged 0–3 years. Managed by <strong>Dr. Mrs Toyin Ojo</strong>, our institution prioritizes holistic development through play-based learning, structured curricula, and a safe, inclusive atmosphere. Located in the heart of Ayobo Iyana Ipaja, we cater to working-class families seeking quality childcare and foundational education.
+          </p>
+        </div>
+      </div>
     </section>
     <!-- End Welcome Section -->
+
+            <!-- CTA Section -->
+            <section class="services-cta">
+                <div class="container">
+                    <h2>Ready to Join Us?</h2>
+                    <p>Give your child the best start in life with our comprehensive care and education programs</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="primary-btn">Contact Us</a>
+                        <a href="about.html" class="secondary-btn">Learn More</a>
+                    </div>
+                </div>
+            </section>
 
     <!-- FAQ Section -->
     <section class="faq-section">
@@ -371,6 +385,64 @@
     <script src="js/index.js"></script>
 </body>
 </html>
+
+<style>
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+.user-dropbtn {
+    background: #fff;
+    color: #4B0082;
+    border: 1px solid #4B0082;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+.user-dropbtn:hover, .user-dropdown:hover .user-dropbtn {
+    background: #f3eaff;
+}
+.user-dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 140px;
+    box-shadow: 0 8px 16px rgba(75,0,130,0.08);
+    border-radius: 8px;
+    z-index: 1001;
+    right: 0;
+    top: 110%;
+}
+.user-dropdown-content a {
+    color: #4B0082;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f3eaff;
+    font-weight: 500;
+    border-radius: 0;
+    background: none;
+    transition: background 0.2s;
+}
+.user-dropdown-content a:last-child {
+    border-bottom: none;
+}
+.user-dropdown-content a:hover {
+    background: #f3eaff;
+}
+.user-dropdown:hover .user-dropdown-content {
+    display: block;
+}
+@media (max-width: 768px) {
+    .user-dropdown { display: none; }
+}
+</style>
 
 
 

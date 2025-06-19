@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Anchor University Creche</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/mobile-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../images/logo.png">
+    <style>
+        .auth-container { max-width: 400px; margin: 60px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 2rem 2.5rem; }
+        .auth-container img { display: block; margin: 0 auto 1rem auto; width: 80px; }
+        .auth-container h2 { text-align: center; margin-bottom: 1.5rem; color: #1a237e; }
+        .auth-container form { display: flex; flex-direction: column; }
+        .auth-container input, .auth-container select { margin-bottom: 1rem; padding: 0.75rem; border: 1px solid #bdbdbd; border-radius: 5px; font-size: 1rem; }
+        .auth-container button { background: #1a237e; color: #fff; border: none; padding: 0.75rem; border-radius: 5px; font-size: 1rem; cursor: pointer; margin-bottom: 1rem; }
+        .auth-container .links { text-align: center; }
+        .auth-container .links a { color: #1a237e; text-decoration: none; margin: 0 0.5rem; }
+        .auth-container .message { text-align: center; margin-bottom: 1rem; color: #d32f2f; }
+        .user-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .user-dropbtn {
+            background: #fff;
+            color: #4B0082;
+            border: 1px solid #4B0082;
+            border-radius: 8px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+        .user-dropbtn:hover, .user-dropdown:hover .user-dropbtn {
+            background: #f3eaff;
+        }
+        .user-dropdown-content {
+            display: none;
+            position: absolute;
+            background: #fff;
+            min-width: 140px;
+            box-shadow: 0 8px 16px rgba(75,0,130,0.08);
+            border-radius: 8px;
+            z-index: 1001;
+            right: 0;
+            top: 110%;
+        }
+        .user-dropdown-content a {
+            color: #4B0082;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #f3eaff;
+            font-weight: 500;
+            border-radius: 0;
+            background: none;
+            transition: background 0.2s;
+        }
+        .user-dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        .user-dropdown-content a:hover {
+            background: #f3eaff;
+        }
+        .user-dropdown:hover .user-dropdown-content {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .user-dropdown { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>🔔 Applications are open!! 🔔</p>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <a href="../../index.html">
+                        <img src="../../images/logo.png" alt="Anchor University Logo">
+                        <span class="logo-text">AUL Creche</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <!-- The logo and text will be shown in mobile view via CSS ::before and ::after -->
+                    <li style="--i:1"><a href="../../index.html">Home</a></li>
+                    <li style="--i:2"><a href="../../about.html">About Us</a></li>
+                    <li style="--i:3"><a href="../../services.html">Services</a></li>
+                    <li style="--i:4"><a href="../../contact.html">Contact Us</a></li>
+                    <li style="--i:4" class="mobile-apply"><a href="/backend/auth/login.html">Login</a></li>
+                    <li style="--i:4" class="mobile-apply"><a href="register.html">Register</a></li>
+                    <li style="--i:7" class="mobile-apply"><a href="../../apply.html" class="apply-btn">Apply now</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <a href="../../apply.html" class="apply-btn desktop-apply">Apply now</a>
+                    <div class="user-dropdown">
+                        <button class="user-dropbtn" aria-label="User menu"><i class="fa fa-user"></i> <span>Account</span> <i class="fa fa-caret-down"></i></button>
+                        <div class="user-dropdown-content">
+                            <a href="/backend/auth/login.html">Login</a>
+                            <a href="register.html">Register</a>
+                        </div>
+                    </div>
+                    <button class="menu-btn" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="auth-container">
+        <img src="../../images/logo.png" alt="Anchor University Creche Logo">
+        <h2>Register</h2>
+        <div class="message" id="message"></div>
+        <form id="registerForm">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <select name="role" id="roleSelect" required>
+                <!-- Options will be loaded dynamically -->
+            </select>
+            <button type="submit">Register</button>
+        </form>
+        <div class="links">
+            <a href="/backend/auth/login.html">Login</a>
+        </div>
+    </div>
+    <script src="../../js/index.js"></script>
+    <script>
+    async function loadRoles() {
+        const res = await fetch('../admin/settings.php');
+        const data = await res.json();
+        const select = document.getElementById('roleSelect');
+        select.innerHTML = '';
+        let enabled = 0;
+        if (data.parent_registration_enabled === '1') {
+            select.innerHTML += '<option value="parent">Parent</option>';
+            enabled++;
+        }
+        if (data.staff_registration_enabled === '1') {
+            select.innerHTML += '<option value="staff">Staff</option>';
+            enabled++;
+        }
+        if (enabled === 0) {
+            select.innerHTML = '<option disabled>No roles available for registration</option>';
+            select.disabled = true;
+            document.querySelector('#registerForm button[type=submit]').disabled = true;
+            document.getElementById('message').textContent = 'Registration is currently disabled.';
+        }
+    }
+    loadRoles();
+
+    document.getElementById('registerForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = new FormData(form);
+        const res = await fetch('register.php', {
+            method: 'POST',
+            body: data
+        });
+        const result = await res.json();
+        const msg = document.getElementById('message');
+        if (result.success) {
+            msg.style.color = '#388e3c';
+            msg.textContent = 'Registration successful! Redirecting to login...';
+            setTimeout(() => { window.location.href = '/backend/auth/login.html'; }, 1200);
+        } else {
+            msg.style.color = '#d32f2f';
+            msg.textContent = result.message;
+        }
+    };
+    </script>
+</body>
+</html> 
